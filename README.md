@@ -1,3 +1,5 @@
+A full description is available at the site where the data is obtained
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 UCI Machine Learning Repository
 
