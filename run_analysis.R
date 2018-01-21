@@ -1,4 +1,6 @@
 #Merges the training and the test sets to create one data set.
+to_be_merged1 <- read.table("test/X_test.txt")
+to_be merged2 <- read.table("train/X_train.txt")
 
 #Extracts only the measurements on the mean and standard deviation for each measurement.
 
