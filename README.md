@@ -4,6 +4,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 UCI Machine Learning Repository
 
 ==================================================================
+
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
 ==================================================================
