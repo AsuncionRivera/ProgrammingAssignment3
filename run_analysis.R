@@ -17,7 +17,7 @@ head(merged_y)                                                    #checks the me
 
 #2. Extracts only the measurements on the mean and standard deviation for each measurement.
 features <- read.table("features.txt")                            #reads the table features.txt
-#Sorry I can't get the mean and standard deviation
+#Sorry I'm unable to do this
 
 #3. Uses descriptive activity names to name the activities in the data set
 activitiy_labels<- read.table("activity_labels.txt")              #reads the table activity_labels.txt
@@ -32,3 +32,4 @@ merged <- cbind(merged_subject, merged_X, merged_y)               #merges merged
 write.table(merged, "merged_data_set.txt")                        #writes the merged data into a new data set
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#Sorry I'm unable to do this
