@@ -16,8 +16,11 @@ merged_y <- rbind(to_be_merged3, to_be_merged4)                   #merges y_text
 head(merged_y)                                                    #checks the merged y
 
 #Extracts only the measurements on the mean and standard deviation for each measurement.
+features <- read.table("features.txt")                            #reads the table features.txt
+#Sorry I can't get the mean and standard deviation
 
 #Uses descriptive activity names to name the activities in the data set
+activitiy_labels<- read.table("activity_labels.txt")                    #reads the table activity_labels.txt
 
 #Appropriately labels the data set with descriptive variable names.
 
