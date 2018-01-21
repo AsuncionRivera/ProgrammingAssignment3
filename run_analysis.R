@@ -25,8 +25,8 @@ activitiy_labels<- read.table("activity_labels.txt")              #reads the tab
 
 #Appropriately labels the data set with descriptive variable names.
 names(merged_subject) <- "subject"                                #labels merged_subject with "subject"
-names(merged_X) <- "X"                                            #labels merged_X with "X"
-names(merged_y) <- "y"                                            #labels merged_y with "y"
+names(merged_X) <- "set"                                          #labels merged_X with "set" for training and test set
+names(merged_y) <- "labels"                                       #labels merged_y with "labels" for training and test labels
 
 merged <- cbind(merged_subject, merged_X, merged_y)               #merges merged_subject, merged_X, merged_y
 write.table(merged, "merged_data_set.txt")                        #writes the merged data into a new data set
