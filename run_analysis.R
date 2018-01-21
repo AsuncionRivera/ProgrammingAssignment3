@@ -10,9 +10,10 @@ to_be_merged4 <- read.table("train/X_train.txt")                  #reads X_train
 merged_X <- rbind(to_be_merged3, to_be_merged4)                   #merges X_text.txt and X_train.txt
 head(merged_X)                                                    #checks the merged X
 
-to_be_merged5
-to_be_merged6
-
+to_be_merged5 <- read.table("train/y_train.txt")
+to_be_merged6 <- read.table("test/y_test.txt")
+merged_X <- rbind(to_be_merged3, to_be_merged4)                   #merges X_text.txt and X_train.txt
+head(merged_X)                                                    #checks the merged X
 
 #Extracts only the measurements on the mean and standard deviation for each measurement.
 
