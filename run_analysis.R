@@ -20,8 +20,15 @@ features <- read.table("features.txt")                            #reads the tab
 #Sorry I can't get the mean and standard deviation
 
 #Uses descriptive activity names to name the activities in the data set
-activitiy_labels<- read.table("activity_labels.txt")                    #reads the table activity_labels.txt
+activitiy_labels<- read.table("activity_labels.txt")              #reads the table activity_labels.txt
+#Sorry I'm unable to do this
 
 #Appropriately labels the data set with descriptive variable names.
+names(merged_subject) <- "subject"                                #labels merged_subject with "subject"
+names(merged_X) <- "X"                                            #labels merged_X with "X"
+names(merged_y) <- "y"                                            #labels merged_y with "y"
+
+merged <- cbind(merged_subject, merged_X, merged_y)               #merges merged_subject, merged_X, merged_y
+write.table(merged, "merged_data_set.txt")                        #writes the merged data into a new data set
 
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
