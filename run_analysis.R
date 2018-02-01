@@ -29,8 +29,9 @@ head(merged_X)                                                    #checks the me
 
 to_be_merged5 <- read.table("train/y_train.txt")                  #reads y_text.txt
 to_be_merged6 <- read.table("test/y_test.txt")                    #reads y_train.txt
-merged_y <- rbind(to_be_merged3, to_be_merged4)                   #merges y_text.txt and y_train.txt
+merged_y <- rbind(to_be_merged5, to_be_merged6)                   #merges y_text.txt and y_train.txt
 head(merged_y)                                                    #checks the merged y
+
 
 #2. Extracts only the measurements on the mean and standard deviation for each measurement.
 features <- read.table("features.txt")                            #reads the table features.txt
@@ -45,11 +46,12 @@ merged_X                                                          #checks merged
 activity_labels <- read.table("activity_labels.txt")              #reads the table activity_labels.txt
 activity_labels <- activity_labels [,2]                           #gets the labels only
 activity_labels <- gsub("_", "", activity_labels)                 #removes '_' and spaces 
+activity_labels                                                   #checks if the labels are ok
 
 
 #4. Appropriately labels the data set with descriptive variable names.
 names(merged_subject) <- "subject"                                #labels merged_subject with "subject"
-names(merged_X) <- "set"                                          #labels merged_X with "set" for training and test set
+colnames(merged_X) <- "activity"                                  #labels merged_X with "activity" for training and test set
 names(merged_y) <- "labels"                                       #labels merged_y with "labels" for training and test labels
 
 merged <- cbind(merged_subject, merged_X, merged_y)               #merges merged_subject, merged_X, merged_y
@@ -58,4 +60,4 @@ view_merged <- read.table("merged_data_set.txt")
 view_merged                                                       #checks merged_data_set.txt
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
+tidy_data_set <- aggregate(. subject + activity, merged_X, mean)
