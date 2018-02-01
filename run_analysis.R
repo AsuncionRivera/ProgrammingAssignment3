@@ -42,8 +42,9 @@ merged_X                                                          #checks merged
 
 
 #3. Uses descriptive activity names to name the activities in the data set
-activitiy_labels<- read.table("activity_labels.txt")              #reads the table activity_labels.txt
-#Sorry I'm unable to do this
+activity_labels <- read.table("activity_labels.txt")              #reads the table activity_labels.txt
+activity_labels <- activity_labels [,2]
+
 
 #4. Appropriately labels the data set with descriptive variable names.
 names(merged_subject) <- "subject"                                #labels merged_subject with "subject"
