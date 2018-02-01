@@ -35,8 +35,10 @@ head(merged_y)                                                    #checks the me
 #2. Extracts only the measurements on the mean and standard deviation for each measurement.
 features <- read.table("features.txt")                            #reads the table features.txt
 head(features)                                                    #checks features
-mean_n_std <- grep("-mean\\(\\)|std\\(\\)", features[,2])
-#########
+mean_n_std <- grep("-mean\\(\\)|std\\(\\)", features[,2])         #gets mean() or std() only
+mean_n_std                                                        #checks if you were able to get only the mean() or std()
+merged_X <- merged_X[, mean_n_std]                                #subsetting
+merged_X                                                          #checks merged_X
 
 
 #3. Uses descriptive activity names to name the activities in the data set
