@@ -5,12 +5,17 @@ install.packages("data.table")
 library(dplyr)
 library(data.table)
 
+#Set working directory
+setwd("D:/DOST Coursera/Module 3/Week 4")
 
 #Download file from url https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 dwnld_frm_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file
+download.file (dwnld_frm_url, destfile="D:/DOST Coursera/Module 3/Week 4/zipfiles.zip")
+unzip(zipfile = "zipfiles.zip", overwrite=TRUE)
 
 #1. Merges the training and the test sets to create one data set.
+
+setwd("D:/DOST Coursera/Module 3/Week 4/UCI HAR Dataset")         #new working directory
 
 to_be_merged1 <- read.table("train/subject_train.txt")            #reads the table subject_train.txt
 to_be_merged2 <- read.table("test/subject_test.txt")              #reads the table subject_text.txt
@@ -29,7 +34,10 @@ head(merged_y)                                                    #checks the me
 
 #2. Extracts only the measurements on the mean and standard deviation for each measurement.
 features <- read.table("features.txt")                            #reads the table features.txt
-#Sorry I'm unable to do this
+head(features)                                                    #checks features
+mean_n_std <- grep("-mean\\(\\)|std\\(\\)", features[,2])
+#########
+
 
 #3. Uses descriptive activity names to name the activities in the data set
 activitiy_labels<- read.table("activity_labels.txt")              #reads the table activity_labels.txt
