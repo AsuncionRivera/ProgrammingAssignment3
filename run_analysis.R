@@ -51,7 +51,7 @@ activity_labels                                                   #checks if the
 
 #4. Appropriately labels the data set with descriptive variable names.
 names(merged_subject) <- "subject"                                #labels merged_subject with "subject"
-names(merged_y) <- "labels"                                       #labels merged_y with "labels" for training and test labels
+names(merged_y) <- "activity"                                     #labels merged_y with "activity" for training and test labels
 
 merged <- cbind(merged_subject, merged_X, merged_y)               #merges merged_subject, merged_X, merged_y
 write.table(merged, "merged_data_set.txt")                        #writes the merged data into a new data set
@@ -59,4 +59,4 @@ view_merged <- read.table("merged_data_set.txt")
 view_merged                                                       #checks merged_data_set.txt
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-tidy_data_set <- aggregate(. subject + activity, merged_X, mean)
+tidy_data_set <- aggregate(. ~subject + activity, merged, mean)
