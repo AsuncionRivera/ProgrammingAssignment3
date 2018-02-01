@@ -63,3 +63,4 @@ tidy_data_set <- aggregate(. ~subject + activity, merged, mean)   #gets the aver
 write.table(tidy_data_set, "tidy_data.txt")                       #writes the new tidy data
 view_tidy <- read.table("tidy_data.txt")                  
 view_tidy                                                         #checks how the tidy data looks like
+
