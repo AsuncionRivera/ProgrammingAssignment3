@@ -51,7 +51,6 @@ activity_labels                                                   #checks if the
 
 #4. Appropriately labels the data set with descriptive variable names.
 names(merged_subject) <- "subject"                                #labels merged_subject with "subject"
-colnames(merged_X) <- "activity"                                  #labels merged_X with "activity" for training and test set
 names(merged_y) <- "labels"                                       #labels merged_y with "labels" for training and test labels
 
 merged <- cbind(merged_subject, merged_X, merged_y)               #merges merged_subject, merged_X, merged_y
