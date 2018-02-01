@@ -1,3 +1,15 @@
+#Load needed Libraries
+install.packages("dplyr")
+install.packages("data.table)
+
+library(dplyr)
+library(data.table)
+
+
+#Download file from url https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+dwnld_frm_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file
+
 #1. Merges the training and the test sets to create one data set.
 
 to_be_merged1 <- read.table("train/subject_train.txt")            #reads the table subject_train.txt
