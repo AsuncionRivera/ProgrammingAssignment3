@@ -60,7 +60,7 @@ view_merged                                                       #checks merged
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 tidy_data_set <- aggregate(. ~subject + activity, merged, mean)   #gets the average of each variable for activity and subject
-write.table(tidy_data_set, "tidy_data.txt")                       #writes the new tidy data
+write.table(tidy_data_set, "tidy_data.txt", row.name=FALSE)       #writes the new tidy data using row.name=FALSE
 view_tidy <- read.table("tidy_data.txt")                  
 view_tidy                                                         #checks how the tidy data looks like
 
