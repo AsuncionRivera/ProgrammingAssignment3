@@ -1,6 +1,6 @@
 #Load needed Libraries
 install.packages("dplyr")
-install.packages("data.table)
+install.packages("data.table")
 
 library(dplyr)
 library(data.table)
