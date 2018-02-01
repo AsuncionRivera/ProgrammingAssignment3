@@ -43,7 +43,8 @@ merged_X                                                          #checks merged
 
 #3. Uses descriptive activity names to name the activities in the data set
 activity_labels <- read.table("activity_labels.txt")              #reads the table activity_labels.txt
-activity_labels <- activity_labels [,2]
+activity_labels <- activity_labels [,2]                           #gets the labels only
+activity_labels <- gsub("_", "", activity_labels)                 #removes '_' and spaces 
 
 
 #4. Appropriately labels the data set with descriptive variable names.
@@ -53,6 +54,8 @@ names(merged_y) <- "labels"                                       #labels merged
 
 merged <- cbind(merged_subject, merged_X, merged_y)               #merges merged_subject, merged_X, merged_y
 write.table(merged, "merged_data_set.txt")                        #writes the merged data into a new data set
+view_merged <- read.table("merged_data_set.txt")                  
+view_merged                                                       #checks merged_data_set.txt
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-#Sorry I'm unable to do this
+
